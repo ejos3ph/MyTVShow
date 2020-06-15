@@ -1,0 +1,49 @@
+﻿@model MyTVShow.Models.TvShow
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>TvShow</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Title)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Title)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.ReleaseDate)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.ReleaseDate, "{0:d MMM yyyy}", new { @class = "form-control" })
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Genre)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Genre)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Rating)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Rating)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.ImdbUrl)
+        </dt>
+        <dd>
+            @*@Html.DisplayFor(model => model.ImdbUrl) *@
+            <a href=@Model.ImdbUrl target="_blank">@Model.Title</a>
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.Id">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>
